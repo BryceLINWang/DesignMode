@@ -1,14 +1,14 @@
 package Strategy;
 
-public class Sorter {
+public class Sorter<T> {
 
-    public void sort(int []arr){
+    public void sort(T []arr,Comparator<T>comparator){
         for (int i=0;i<arr.length-1;i++) {
             int  minPos=i;
             for (int j = i+1; j < arr.length; j++) {
-                minPos=arr[j]<arr[minPos]?j:minPos;
+                minPos=comparator.compare(arr[j],arr[minPos])==-1?j:minPos;
             }
-            int tmp=arr[i];
+            T tmp=arr[i];
             arr[i]=arr[minPos];
             arr[minPos]=tmp;
         }
