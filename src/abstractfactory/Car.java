@@ -1,0 +1,10 @@
+package abstractfactory;
+
+import Factorymethod.Moveable;
+
+public class Car extends Vehicle{
+
+    public void go() {
+        System.out.println("Car go wuwuwu");
+    }
+}
